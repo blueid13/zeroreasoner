@@ -9,6 +9,8 @@ cd verl
 pip install -e .
 cd ..
 pip install wheel
+
+(nvcc 관련해서 경로 문제 생길수있음 조심하십쇼)
 pip install flash-attn --no-build-isolation
 pip install -r requirements.txt
 pip uninstall vllm
