@@ -26,34 +26,12 @@ pip install debugpy
 python -m absolute_zero_reasoner.data_construction.process_code_reasoning_data
 ```
 
-<!-- ============================================== -->
-<div align="left">
-  <h1 id="training">🏋️ Training</h1>
-  <hr style="height: 3px; background: linear-gradient(90deg, #EF8E8D, #5755A3); border: none; border-radius: 3px;">
-</div>
-
-> **⚠️WARNING⚠️**: The Python executor in this repository is very raw and intended for research purposes only. It is not secure for production environments. We plan to update our executor to more secure implementations in the future. Your use of our code is at your own discretion and risk.
-
-
-## 🫛 Seeding (Optional)
-We provide the seed datasets we collected by prompting each model in data/. If you want to create your own seed data, use the following script:
-```bash
-export OUTPUT_SEED_PATH=data/<new_ded_abd_seed_data_name>.jsonl
-export OUTPUT_CODE_F_SEED_PATH=data/<new_ind_seed_data_name>.jsonl
-bash scripts/seeding/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
-```
 
 ## ♟️ Self-play
-3b models need 2 X 80gb GPUs, 7/8b models need 4 X 80gb, 14b requires 8 X 80gb
 ```bash
-bash scripts/selfplay/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
+bash scripts/selfplay/2b.sh
 ```
-If you want to use your own ded/abd or ind seed dataset:
-```bash
-export OUTPUT_SEED_PATH=data/<your_ded_abd_seed_data_name>.jsonl
-export OUTPUT_CODE_F_SEED_PATH=data/<your_ind_seed_data_name>.jsonl
-bash scripts/selfplay/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
-```
+
 
 ## 🌚 Resuming Runs
 When resuming runs, put the original run wandb id into the script, i.e., `trainer.wandb_run_id=<run_id>`.
