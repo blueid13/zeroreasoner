@@ -1,8 +1,8 @@
 
 ## 🎄 Environment Setup
 ```bash
-conda create -n azr python=3.10
-conda activate azr
+conda create -n {가상환경이름} python=3.10
+conda activate {가상환경이름}
 conda install nvidia/label/cuda-12.4.1::cuda-toolkit
 cd verl
 pip install -e .
