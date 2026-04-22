@@ -10,8 +10,9 @@ pip install -e .
 cd ..
 pip install wheel
 
-(nvcc 관련해서 경로 문제 생길수있음 조심하십쇼)
-pip install flash-attn --no-build-isolation
+python -m pip install --no-build-isolation --no-binary :all: --no-cache-dir flash-attn==2.7.4.post1
+(pip install flash-attn --no-build-isolation하면 초자연적인 버그 나서 이러는거고 flash attn 깔려잇으시면 패스해도됨)
+
 pip install -r requirements.txt
 pip uninstall vllm
 pip install vllm==0.7.3
