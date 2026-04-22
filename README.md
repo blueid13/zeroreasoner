@@ -8,10 +8,13 @@ conda install nvidia/label/cuda-12.4.1::cuda-toolkit
 cd verl
 pip install -e .
 cd ..
-pip install wheel
+pip install hatchling
+python -m pip uninstall -y torch torchvision torchaudio flash-attn flash_attn
+python -m pip install --index-url https://download.pytorch.org/whl/cu128 \
+  torch torchvision torchaudio
 
 python -m pip install --no-build-isolation --no-binary :all: --no-cache-dir flash-attn==2.7.4.post1
-(pip install flash-attn --no-build-isolation하면 초자연적인 버그 나서 이러는거고 flash attn 깔려잇으시면 패스해도됨)
+(pip install flash-attn --no-build-isolation하면 초자연적인 버그 나서 이러는거니 기본 설치로 문제 없으시면 패스해도됨)
 
 pip install -r requirements.txt
 pip uninstall vllm
