@@ -1,6 +1,7 @@
 
 ## 🎄 Environment Setup
 ```bash
+(대충 클론한 디렉토리 가셔서)
 conda create -n {가상환경이름} python=3.10
 conda activate {가상환경이름}
 conda install nvidia/label/cuda-12.4.1::cuda-toolkit
