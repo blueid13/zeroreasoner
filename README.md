@@ -19,6 +19,8 @@ pip install vllm==0.7.3
 pip install transformers==4.47.1
 pip install "math-verify[antlr4_9_3]"
 pip install debugpy
+python -m pip uninstall -y transformers
+python -m pip install -U "transformers[serving] @ git+https://github.com/huggingface/transformers.git@main"
 ```
 
 ## 💾 Data Processing
