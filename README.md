@@ -6,7 +6,11 @@ cd verl
 pip install -e .
 cd ..
 
-python -m pip install "https://github.com/adithyaxx/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu13torch2.11cxx11abiTRUE-cp312-cp312-linux_x86_64.whl"
+python -m pip install \
+  --no-build-isolation \
+  --no-cache-dir \
+  --force-reinstall \
+  git+https://github.com/Dao-AILab/flash-attention.git@v2.8.3
 
 pip install -r requirements.txt
 python -m pip install -U vllm --extra-index-url https://download.pytorch.org/whl/cu129
