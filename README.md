@@ -1,29 +1,19 @@
 
 ## 🎄 Environment Setup
 ```bash
-(대충 클론한 디렉토리 가셔서)
-conda create -n {가상환경이름} python=3.10
-conda activate {가상환경이름}
-conda install nvidia/label/cuda-12.4.1::cuda-toolkit
+(클론한 디렉토리 가셔서 가상환경 만드시고, cuda 툴킷 설치 필요합니다)
 cd verl
 pip install -e .
 cd ..
-pip install hatchling
-python -m pip uninstall -y torch torchvision torchaudio flash-attn flash_attn
-python -m pip install --index-url https://download.pytorch.org/whl/cu128 \
-  torch torchvision torchaudio
-
-python -m pip install --no-build-isolation --no-binary :all: --no-cache-dir flash-attn==2.7.4.post1
-(pip install flash-attn --no-build-isolation하면 초자연적인 버그 나서 이러는거니 기본 설치로 문제 없으시면 패스해도됨)
+pip install flash-attn --no-build-isolation
+(flash attn 버전은 상관 없으니 기존에 쓰시던 환경이랑 충돌 안 나는 버전으로 설치하시기만 하면 됩니다
+python -m pip install "https://github.com/adithyaxx/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu13torch2.11cxx11abiTRUE-cp312-cp312-linux_x86_64.whl" 계열 추천)
 
 pip install -r requirements.txt
-pip uninstall vllm
-pip install vllm==0.7.3
-pip install transformers==4.47.1
+python -m pip install -U vllm --extra-index-url https://download.pytorch.org/whl/cu129
 pip install "math-verify[antlr4_9_3]"
 pip install debugpy
-python -m pip uninstall -y transformers
-python -m pip install -U "transformers[serving] @ git+https://github.com/huggingface/transformers.git@main"
+pip install -U "transformers[serving] @ git+https://github.com/huggingface/transformers.git@main"
 ```
 
 ## 💾 Data Processing
