@@ -5,9 +5,8 @@
 cd verl
 pip install -e .
 cd ..
-pip install flash-attn --no-build-isolation
-(flash attn 버전은 상관 없으니 기존에 쓰시던 환경이랑 충돌 안 나는 버전으로 설치하시기만 하면 됩니다
-python -m pip install "https://github.com/adithyaxx/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu13torch2.11cxx11abiTRUE-cp312-cp312-linux_x86_64.whl" 계열 추천)
+
+python -m pip install "https://github.com/adithyaxx/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu13torch2.11cxx11abiTRUE-cp312-cp312-linux_x86_64.whl"
 
 pip install -r requirements.txt
 python -m pip install -U vllm --extra-index-url https://download.pytorch.org/whl/cu129
