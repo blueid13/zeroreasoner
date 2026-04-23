@@ -13,6 +13,9 @@ python -m pip install -U vllm --extra-index-url https://download.pytorch.org/whl
 pip install "math-verify[antlr4_9_3]"
 pip install debugpy
 pip install -U "transformers[serving] @ git+https://github.com/huggingface/transformers.git@main"
+python -m pip uninstall -y tensordict
+python -m pip install tensordict==0.6.2
+python -m pip check
 ```
 
 ## 💾 Data Processing
