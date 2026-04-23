@@ -20,6 +20,13 @@ pip install -U "transformers[serving] @ git+https://github.com/huggingface/trans
 python -m pip uninstall -y tensordict
 python -m pip install tensordict==0.6.2
 python -m pip check
+python -m pip uninstall -y torch torchvision torchaudio
+
+python -m pip cache purge
+
+python -m pip install \
+  torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 \
+  --index-url https://download.pytorch.org/whl/cu130
 ```
 
 ## 💾 Data Processing
